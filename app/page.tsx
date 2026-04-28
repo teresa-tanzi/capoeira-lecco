@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { MapPin, Clock, Phone, Instagram, MessageCircle, Users, Music, Flame, Heart } from "lucide-react"
+import { FaWhatsapp } from "react-icons/fa"
 
 // ============================================
 // SITE CONFIGURATION - Modifica questi valori
@@ -10,7 +11,7 @@ import { MapPin, Clock, Phone, Instagram, MessageCircle, Users, Music, Flame, He
 const siteConfig = {
   // Informazioni gruppo
   groupName: "Grupo Geração Capoeira Lecco",
-  shortName: "Geração Capoeira",
+  shortName:  "Capoeira Geração",
   maestro: "Mestrando Penteado",
   
   // Sede
@@ -31,9 +32,9 @@ const siteConfig = {
   target: "Adulti e Ragazzi",
   
   // Contatti (sostituisci con i tuoi link reali)
-  whatsappNumber: "393XXXXXXXXX", // Numero WhatsApp senza + e senza spazi
+  whatsappNumber: "393464765651", // Numero WhatsApp senza + e senza spazi
   whatsappMessage: "Ciao! Vorrei informazioni sul corso di Capoeira a Lecco.",
-  instagramHandle: "geracaocapoeiralecco", // Solo l'handle senza @
+  instagramHandle: "capoeira_geracao_lecco", // Solo l'handle senza @
   
   // Google Maps
   mapsEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2790.8!2d9.3!3d45.8!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sCesana%20Brianza!5e0!3m2!1sit!2sit!4v1234567890",
@@ -98,10 +99,6 @@ export default function CapoeiraLandingPage() {
         </div>
         
         <div className="container mx-auto px-4 py-20 text-center relative z-10">
-          <div className="inline-block mb-6 px-4 py-2 bg-primary/10 rounded-full border border-primary/20">
-            <span className="text-sm font-medium text-primary">{siteConfig.shortName}</span>
-          </div>
-          
           <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl font-bold text-foreground mb-6 tracking-tight text-balance">
             Capoeira Geração<br />
             <span className="text-primary">provincia di Lecco</span>
@@ -115,18 +112,18 @@ export default function CapoeiraLandingPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button 
               size="lg" 
-              className="bg-primary hover:bg-primary/90 text-primary-foreground text-lg px-8 py-6 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+              className="bg-amber-400 hover:bg-amber-400/90 text-secondary-foreground text-lg px-8 py-6 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
               asChild
             >
               <a href={getWhatsAppLink()} target="_blank" rel="noopener noreferrer">
-                <MessageCircle className="mr-2 h-5 w-5" />
+                <FaWhatsapp className="mr-2 h-5 w-5" />
                 Prenota la Tua Prova Gratuita
               </a>
             </Button>
             <Button 
               variant="outline" 
               size="lg"
-              className="text-lg px-8 py-6 rounded-full border-2 border-primary/30 hover:border-primary hover:bg-primary/5"
+              className="text-lg px-8 py-6 rounded-full border-2 border-primary/30 hover:border-primary hover:bg-primary/5 transition-all duration-300 hover:scale-105"
               asChild
             >
               <a href="#cosè-la-capoeira">
@@ -142,7 +139,7 @@ export default function CapoeiraLandingPage() {
             </div>
             <div className="flex items-center gap-2">
               <MapPin className="h-5 w-5 text-primary" />
-              <span>{siteConfig.city}</span>
+              <span>{siteConfig.city} ({siteConfig.province})</span>
             </div>
             <div className="flex items-center gap-2">
               <Users className="h-5 w-5 text-primary" />
@@ -186,7 +183,7 @@ export default function CapoeiraLandingPage() {
               <Card className="bg-background border-none shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                 <CardContent className="p-6 text-center">
                   <div className="w-14 h-14 bg-secondary/50 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                    <Heart className="h-7 w-7 text-primary" />
+                    <Heart className="h-7 w-7 text-yellow-500" />
                   </div>
                   <h3 className="font-semibold text-lg text-foreground mb-2">Danza</h3>
                   <p className="text-muted-foreground text-sm">
@@ -194,7 +191,7 @@ export default function CapoeiraLandingPage() {
                   </p>
                 </CardContent>
               </Card>
-              
+
               <Card className="bg-background border-none shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                 <CardContent className="p-6 text-center">
                   <div className="w-14 h-14 bg-accent/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
@@ -206,7 +203,7 @@ export default function CapoeiraLandingPage() {
                   </p>
                 </CardContent>
               </Card>
-              
+
               <Card className="bg-background border-none shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                 <CardContent className="p-6 text-center">
                   <div className="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
@@ -232,7 +229,7 @@ export default function CapoeiraLandingPage() {
               Orari e Luogo
             </h2>
           </div>
-          
+
           <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {/* Info Card */}
             <Card className="bg-card border-none shadow-xl overflow-hidden">
@@ -242,10 +239,10 @@ export default function CapoeiraLandingPage() {
                     {siteConfig.groupName}
                   </h3>
                 </div>
-                
+
                 <div className="p-6 space-y-6">
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-secondary rounded-xl flex items-center justify-center shrink-0">
+                    <div className="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center shrink-0">
                       <Clock className="h-6 w-6 text-primary" />
                     </div>
                     <div>
@@ -258,10 +255,10 @@ export default function CapoeiraLandingPage() {
                       </p>
                     </div>
                   </div>
-                  
+
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-secondary rounded-xl flex items-center justify-center shrink-0">
-                      <MapPin className="h-6 w-6 text-primary" />
+                    <div className="w-12 h-12 bg-secondary/50 rounded-2xl flex items-center justify-center shrink-0">
+                      <MapPin className="h-6 w-6 text-yellow-500" />
                     </div>
                     <div>
                       <h4 className="font-semibold text-foreground mb-1">Indirizzo</h4>
@@ -271,7 +268,7 @@ export default function CapoeiraLandingPage() {
                       <p className="text-muted-foreground">
                         {siteConfig.postalCode} {siteConfig.city} ({siteConfig.province})
                       </p>
-                      <a 
+                      <a
                         href={siteConfig.mapsLink}
                         target="_blank"
                         rel="noopener noreferrer"
@@ -281,10 +278,10 @@ export default function CapoeiraLandingPage() {
                       </a>
                     </div>
                   </div>
-                  
+
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-secondary rounded-xl flex items-center justify-center shrink-0">
-                      <Users className="h-6 w-6 text-primary" />
+                    <div className="w-12 h-12 bg-accent/20 rounded-2xl flex items-center justify-center shrink-0">
+                      <Users className="h-6 w-6 text-accent" />
                     </div>
                     <div>
                       <h4 className="font-semibold text-foreground mb-1">A chi è rivolto</h4>
@@ -334,7 +331,7 @@ export default function CapoeiraLandingPage() {
                   {/* Maestro Photo */}
                   <div className="md:col-span-2 relative min-h-[400px] md:min-h-[500px]">
                     <img 
-                      src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/47209640_744692499244702_3492424821059354624_n-9trmKhaWVdxpNNlS7neJdtqc5l45Ps.jpg"
+                      src="/foto/maestro.jpg"
                       alt="Mestrando Penteado con il berimbau"
                       className="absolute inset-0 w-full h-full object-cover"
                     />
@@ -380,16 +377,16 @@ export default function CapoeiraLandingPage() {
               Il Gruppo
             </h2>
             <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
-              Allenamenti, roda, musica e tanto divertimento. Unisciti alla nostra famiglia!
+              Allenamenti, roda, musica e tanto divertimento. Unisciti anche tu!
             </p>
           </div>
           
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-6xl mx-auto">
             {/* Main large image - Formal group photo */}
             <div className="col-span-2 row-span-2 relative rounded-2xl overflow-hidden shadow-lg group">
-              <img 
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/photo_2026-04-27_21-50-02-l3UHSdDlFKvrNrw14TNry2tx1R35lE.jpg"
-                alt="Foto di gruppo Geração Capoeira Lecco"
+              <img
+                src="/foto/gruppo-completo.jpg"
+                alt="Il gruppo Geração Capoeira a Lecco"
                 className="w-full h-full object-cover min-h-[300px] md:min-h-[500px] transition-transform duration-500 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -401,7 +398,7 @@ export default function CapoeiraLandingPage() {
             {/* Training photo */}
             <div className="relative rounded-2xl overflow-hidden shadow-lg group">
               <img 
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/photo_2026-04-27_21-50-05-cNeAtAj7C7siS2s3l51GthVNXQhUxw.jpg"
+                src="/foto/allenamento.jpg"
                 alt="Allenamento di Capoeira"
                 className="w-full h-full object-cover min-h-[200px] md:min-h-[240px] transition-transform duration-500 group-hover:scale-105"
               />
@@ -411,23 +408,10 @@ export default function CapoeiraLandingPage() {
               </div>
             </div>
             
-            {/* Bateria photo - 4 people playing */}
-            <div className="relative rounded-2xl overflow-hidden shadow-lg group">
-              <img 
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/photo_2026-04-27_21-50-04-DazPxlQ8a6aRxWpHrtEPM53flf4qKn.jpg"
-                alt="Bateria - Strumenti tradizionali"
-                className="w-full h-full object-cover min-h-[200px] md:min-h-[240px] transition-transform duration-500 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <div className="absolute bottom-3 left-3 right-3 text-card opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <p className="font-medium text-sm">La Bateria</p>
-              </div>
-            </div>
-            
             {/* Roda photo */}
             <div className="relative rounded-2xl overflow-hidden shadow-lg group">
               <img 
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/photo_2026-04-27_21-50-03-PB4ci8JmbZ5p0p2AhK5CSKXKFn2Kjv.jpg"
+                src="/foto/roda.jpg"
                 alt="Roda di Capoeira"
                 className="w-full h-full object-cover min-h-[200px] md:min-h-[240px] transition-transform duration-500 group-hover:scale-105"
               />
@@ -440,7 +424,7 @@ export default function CapoeiraLandingPage() {
             {/* Large bateria with window light */}
             <div className="relative rounded-2xl overflow-hidden shadow-lg group">
               <img 
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/photo_2026-04-27_21-50-09-brcblX07n2oxaqMYxcLf4t27Y8QcJn.jpg"
+                src="/foto/musica.jpg"
                 alt="Bateria con strumenti tradizionali"
                 className="w-full h-full object-cover min-h-[200px] md:min-h-[240px] transition-transform duration-500 group-hover:scale-105"
               />
@@ -453,7 +437,7 @@ export default function CapoeiraLandingPage() {
             {/* Stretching photo */}
             <div className="relative rounded-2xl overflow-hidden shadow-lg group">
               <img 
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/photo_2026-04-27_21-51-54-ZB3isaUCMmLi7WqASCce6tneO2XKKW.jpg"
+                src="/foto/flessibilita.jpg"
                 alt="Stretching e flessibilità"
                 className="w-full h-full object-cover min-h-[200px] md:min-h-[240px] transition-transform duration-500 group-hover:scale-105"
               />
@@ -464,32 +448,19 @@ export default function CapoeiraLandingPage() {
             </div>
             
             {/* Fun group photo */}
-            <div className="col-span-2 relative rounded-2xl overflow-hidden shadow-lg group">
-              <img 
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/photo_2026-04-27_21-50-06-cXvOWsJ6KsozLlnF6850tOJlJT6j0m.jpg"
+            <div className="relative rounded-2xl overflow-hidden shadow-lg group">
+              <img
+                src="/foto/dopo-allenamento.jpg"
                 alt="Il gruppo dopo l'allenamento"
-                className="w-full h-full object-cover min-h-[200px] md:min-h-[280px] transition-transform duration-500 group-hover:scale-105"
+                className="w-full h-full object-cover min-h-[200px] md:min-h-[240px] transition-transform duration-500 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <div className="absolute bottom-4 left-4 right-4 text-card opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <p className="font-semibold">Dopo l&apos;allenamento</p>
+              <div className="absolute bottom-3 left-3 right-3 text-card opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <p className="font-medium text-sm">Dopo l&apos;allenamento</p>
               </div>
             </div>
           </div>
-          
-          <div className="text-center mt-12">
-            <Button 
-              variant="outline" 
-              size="lg"
-              className="rounded-full border-2 border-primary/30 hover:border-primary hover:bg-primary/5"
-              asChild
-            >
-              <a href={getInstagramLink()} target="_blank" rel="noopener noreferrer">
-                <Instagram className="mr-2 h-5 w-5" />
-                Altre foto su Instagram
-              </a>
-            </Button>
-          </div>
+ 
         </div>
       </section>
 
@@ -508,11 +479,11 @@ export default function CapoeiraLandingPage() {
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center max-w-xl mx-auto">
             <Button 
               size="lg"
-              className="w-full sm:w-auto bg-secondary hover:bg-secondary/90 text-secondary-foreground text-lg px-10 py-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
+              className="w-full sm:w-auto bg-amber-400 hover:bg-amber-400/90 text-secondary-foreground text-lg px-10 py-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
               asChild
             >
               <a href={getWhatsAppLink()} target="_blank" rel="noopener noreferrer">
-                <MessageCircle className="mr-3 h-6 w-6" />
+                <FaWhatsapp className="mr-3 h-6 w-6" />
                 Scrivici su WhatsApp
               </a>
             </Button>
@@ -520,7 +491,7 @@ export default function CapoeiraLandingPage() {
             <Button 
               size="lg"
               variant="outline"
-              className="w-full sm:w-auto bg-transparent border-2 border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 hover:border-primary-foreground text-lg px-10 py-8 rounded-2xl transition-all duration-300"
+              className="w-full sm:w-auto bg-transparent border-2 border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 hover:border-primary-foreground text-lg px-10 py-8 rounded-2xl transition-all duration-300 hover:scale-105"
               asChild
             >
               <a href={getInstagramLink()} target="_blank" rel="noopener noreferrer">
@@ -529,19 +500,7 @@ export default function CapoeiraLandingPage() {
               </a>
             </Button>
           </div>
-          
-          <div className="mt-16 text-center">
-            <p className="text-primary-foreground/60 text-sm">
-              Oppure chiamaci direttamente
-            </p>
-            <a 
-              href={`tel:+${siteConfig.whatsappNumber}`}
-              className="inline-flex items-center gap-2 text-primary-foreground hover:underline mt-2 text-lg font-medium"
-            >
-              <Phone className="h-5 w-5" />
-              +39 3XX XXX XXXX
-            </a>
-          </div>
+
         </div>
       </section>
 
@@ -564,7 +523,7 @@ export default function CapoeiraLandingPage() {
                 className="w-12 h-12 bg-background/10 hover:bg-background/20 rounded-full flex items-center justify-center transition-colors"
                 aria-label="WhatsApp"
               >
-                <MessageCircle className="h-5 w-5" />
+                <FaWhatsapp className="h-5 w-5" />
               </a>
               <a 
                 href={getInstagramLink()} 
@@ -579,6 +538,17 @@ export default function CapoeiraLandingPage() {
             
             <p className="text-background/40 text-sm">
               © {new Date().getFullYear()} {siteConfig.groupName}. Tutti i diritti riservati.
+            </p>
+            <p className="text-background/20 text-xs mt-3">
+              Sito realizzato da{" "}
+              <a
+                href="https://github.com/teresa-tanzi"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-background/60 transition-colors"
+              >
+                Teresa Tanzi
+              </a>
             </p>
           </div>
         </div>
